@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+langchain-openai = "*"
+langchain = "*"
+unstructured = "*"
+chromadb = "*"
+openai = "*"
+tiktoken = "*"
+langchain-chroma = "*"
+streamlit = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
