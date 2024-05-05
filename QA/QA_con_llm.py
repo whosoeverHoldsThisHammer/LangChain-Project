@@ -6,11 +6,11 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
-from langchain.chains import RetrievalQAWithSourcesChain
+# from langchain.chains import RetrievalQAWithSourcesChain
 
 
-KB_PATH = "knowledge_base"
-DB_PATH = 'data/chroma/'
+KB_PATH = "../knowledge_base"
+DB_PATH = '../data/chroma/'
 RELEVANCE_SCORE = 0.4
 
 # Carga de documentos
