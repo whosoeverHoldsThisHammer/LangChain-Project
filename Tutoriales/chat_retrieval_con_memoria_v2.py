@@ -23,9 +23,9 @@ def load_documents():
         chunk_size = 1024,
         chunk_overlap = 200
     )
-    splitted_docs = splitter.split_documents(documents)
+    splits = splitter.split_documents(documents)
 
-    return splitted_docs
+    return splits
 
 docs = load_documents()
 
@@ -53,7 +53,7 @@ def create_chain(vectorStore):
 
     prompt = ChatPromptTemplate.from_messages(
         [
-            ("system", "Responde las preguntas del usuario a partir del siguiente contexto: {context}"),
+            ("system", "Responde las preguntas del usuario a partir del siguiente contexto: {context}. Sólo contesta por temas relacionados al contexto proporcionado. No intentes contestar sobre otros temas."),
             MessagesPlaceholder(variable_name = "chat_history"),
             ("human", "{input}")
         ]
@@ -71,7 +71,7 @@ def create_chain(vectorStore):
         [
             MessagesPlaceholder(variable_name = "chat_history"),
             ("human", "{input}"),
-            ("system", "Dado el historial de la conversación, genera una nueva pregunta que busque información relevante para la conversación")
+            ("system", "Dado el historial de la conversación, genera una nueva pregunta que busque información relevante para la conversación. No intentes contestar sobre temas que no están en la base de conocimiento.")
         ]
     )
 
