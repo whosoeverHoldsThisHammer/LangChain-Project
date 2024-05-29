@@ -1,0 +1,4 @@
+.env
+data/chroma/
+knowledge_base/
+_pycache_/
