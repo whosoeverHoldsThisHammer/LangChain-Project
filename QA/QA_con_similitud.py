@@ -6,8 +6,8 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.llms import OpenAI
 from langchain.chains import VectorDBQA
 
-KB_PATH = "knowledge_base"
-DB_PATH = 'data/chroma/'
+KB_PATH = "../knowledge_base"
+DB_PATH = '../data/chroma/'
 RELEVANCE_SCORE = 0.4
 
 # Carga de documentos
